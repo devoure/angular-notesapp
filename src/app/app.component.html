@@ -1,3 +1,15 @@
-<div>
-  Helooo
+<div class="bg-white">
+  <div *ngIf="if tasks.length === 0; else showTasks">
+    <h2>No tasks right now!</h2>
+  </div>
+
+
+  <ng-template #showTasks>
+    <ul>
+      <li *ngFor="let task of tasks">
+        {{ task.name }}
+      </li>
+    </ul>
+  </ng-template>
 </div>
+
