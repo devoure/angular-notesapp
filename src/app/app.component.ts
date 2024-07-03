@@ -23,7 +23,15 @@ export class AppComponent {
     new Tasks('Learn Ride a bike', true)
   ]
 
-  visibleTasks : Tasks[] = this.tasks
+  filters = [
+    (task: Tasks)=>task,
+    (task: Tasks)=>!task.isComplete,
+    (task: Tasks)=>task.isComplete
+  ]
+
+  get visibleTasks(): Tasks[]{
+    return this.tasks.filter(this.filters[+this.listFilter]);
+  };
 
   checkTask(task : Tasks){
     task.isComplete = !task.isComplete
@@ -31,19 +39,11 @@ export class AppComponent {
   }
 
   addTask(){
-    console.log('>>> Adding ', this.newTask)
     this.tasks.push(new Tasks(this.newTask))
     this.newTask = ''
   }
 
   filterTasks(e : any){
-    console.log(">>> ", e.target.value)
-    if (e.target.value === '0'){
-      this.visibleTasks = this.tasks
-    } else if (e.target.value === '1'){
-      this.visibleTasks = this.tasks.filter(item => !item.isComplete)
-    } else{
-      this.visibleTasks = this.tasks.filter(item => item.isComplete)
-    }
+    this.listFilter = e.target.value;
   }
 }
