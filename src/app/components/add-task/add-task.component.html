@@ -1,0 +1,5 @@
+<form class="w-80 bg-black h-12 flex items-center justify-around mb-8">
+  <input type="text" class="border-0 h-8 w-60 rounded-lg pl-6" name="new-task" [(ngModel)]="newTask"/>
+  <button class="bg-white w-8 h-8 rounded-full hover:bg-stone-200 duration-300" (click)="$event.preventDefault(); addTask()"><span class="font-bold text-2xl">+</span></button>
+</form>
+
