@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './add-task.component.html',
   styleUrl: './add-task.component.css'
 })
+
 export class AddTaskComponent {
+  newTask : string = '';
+
+  addTask(){
+    this.tasks.push(new Tasks(this.newTask))
+    this.newTask = ''
+  }
 }
