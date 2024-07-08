@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { Tasks } from '../../../shared/models/tasks'
 
@@ -13,21 +13,17 @@ import { Tasks } from '../../../shared/models/tasks'
 })
 export class FilterTasksComponent {
   @Input() tasks!: Tasks[];
-
-  
-  listFilter : string = '1';
+  @Input() listFilter!: string;
+  @Output() listFilterChange = new EventEmitter<string>();  
 
   selectedOption : boolean[] = [true, false, false];
 
 
-  filters = [
-    (task: Tasks)=>task,
-    (task: Tasks)=>!task.isComplete,
-    (task: Tasks)=>task.isComplete
-  ]
-
   filterTasks(e : any){
+    let selectedDefaults = [false, false, false];
+    selectedDefaults[+e.target.value] = true;
+    this.selectedOption = [...selectedDefaults]
     this.listFilter = e.target.value;
+    this.listFilterChange.emit(this.listFilter);
   }
-
 }

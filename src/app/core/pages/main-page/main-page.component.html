@@ -2,9 +2,14 @@
 
   <div class="w-[450px] h-[450px] rounded-md shadow-lg overflow-hidden">
 
-    <app-add-task [tasks]="tasks"></app-add-task>
+    <div class="h-[20%]">
+      <app-add-task [tasks]="tasks"></app-add-task>
+    </div>
 
-    <app-filter-tasks [tasks]="tasks"></app-filter-tasks>
+    <div class="h-[80%] flex flex-col items-center justify-center">
+      <app-filter-tasks [tasks]="tasks" [(listFilter)]="listFilter" ></app-filter-tasks>
+      <app-display-tasks [tasks]="tasks" [visibleTasks]="visibleTasks" ></app-display-tasks>
+    </div>
 
   </div>
 

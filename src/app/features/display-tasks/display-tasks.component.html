@@ -1,0 +1,20 @@
+ <div class="bg-white shadow-lg w-max max-w-80 h-min p-6 rounded-md">
+  
+  <div *ngIf="visibleTasks.length === 0; else showTasks">
+    <h2>No tasks right now!</h2>
+  </div>
+
+  <ng-template #showTasks>
+    
+    <ul>
+      
+      <li class="w-72 flex justify-between mb-2" *ngFor="let task of visibleTasks">
+        <h3 [ngClass]="task.isComplete ? 'line-through' : 'no-underline'">{{ task.name }}</h3>
+        <input type="checkbox" class="border-0 rounded-full" [checked]="task.isComplete" (click)="checkTask(task)"/>
+      </li>
+    
+    </ul>
+    
+  </ng-template>
+  
+</div>
