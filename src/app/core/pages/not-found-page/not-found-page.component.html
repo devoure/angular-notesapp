@@ -1,0 +1,9 @@
+<div class="w-screen h-screen flex items-center justify-center">
+
+  <div class="w-[420px] h-[420px] rounded-md shadow-md flex flex-col items-center justify-around">
+    <img [ngSrc]="notFoundImg" width="300" height="300" class="h-80 w-80 object-cover object-center"/>
+    <p class="h-max w-full font-bold text-center">Did you mean <span class="text-blue-300 ml-3">'http://localhost:4200/tasks'</span></p>
+    <a routerLink="/tasks" href="#" class="bg-blue-500 hover:bg-black transition-all duration-300 text-white font-bold px-4 py-2 rounded-lg">Head over there</a>
+  </div>
+
+</div>

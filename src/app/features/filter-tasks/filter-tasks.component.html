@@ -1,0 +1,15 @@
+<div class="w-72 h-12 border-black border-2 rounded-md flex">
+
+  <button [ngClass]="selectedOption[0] ? 'w-24 h-full bg-black text-sm text-white font-bold flex items-center justify-center cursor-pointer hover:bg-stone-200 duration-300 hover:text-black' : 'w-24 h-full bg-white text-sm flex items-center justify-center cursor-pointer hover:bg-stone-200 duration-300'" (click)="filterTasks($event)" value="0">
+    All
+  </button>
+  
+  <button [ngClass]="selectedOption[1] ? 'w-24 h-full bg-black text-sm text-white font-bold flex items-center justify-center cursor-pointer  hover:bg-stone-200 duration-300 hover:text-black' : 'w-24 h-full bg-white text-sm flex items-center justify-center cursor-pointer hover:bg-stone-200 duration-300'" (click)="filterTasks($event)" value="1">
+    Pending
+  </button>
+    
+  <button [ngClass]="selectedOption[2] ? 'w-24 h-full bg-black text-sm text-white font-bold flex items-center justify-center line-through cursor-pointer  hover:bg-stone-200 duration-300 hover:text-black' : 'cursor-pointer line-through w-24 h-full bg-white text-sm flex items-center justify-center  hover:bg-stone-200 duration-300'" (click)="filterTasks($event)" value="2">  
+    Completed
+  </button>
+
+</div>

@@ -15,8 +15,6 @@ import { Tasks } from '../shared/models/tasks'
 export class AppComponent {
   title = 'tasker';
   newTask : string = ''
-  selectedOption : boolean[] = [true, false, false]
-  listFilter : string = '1'
 
   tasks : Tasks[] = [
     new Tasks('Learn Frontend'),
