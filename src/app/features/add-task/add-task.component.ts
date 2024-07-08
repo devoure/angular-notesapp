@@ -17,8 +17,8 @@ export class AddTaskComponent {
   newTask: string = '';
 
   addTask(){
-    console.log(">>> New Task: ", this.newTask)
-    this.tasks.push(new Tasks(this.newTask))
-    this.newTask = ''
+    console.log(">>> New Task: ", this.newTask);
+    this.tasks.push(new Tasks(this.newTask));
+    this.newTask = '';
   }
 }
