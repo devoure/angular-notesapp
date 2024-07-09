@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Tasks } from '../../shared/models/tasks';
 import { CommonModule } from '@angular/common';
+import EventBusService from '../../shared/services/EventService'
 
 @Component({
   selector: 'app-display-tasks',
@@ -17,7 +18,11 @@ export class DisplayTasksComponent {
 
 
   checkTask(task : Tasks){
-    task.isComplete = !task.isComplete
+    task.isComplete = !task.isComplete;
+  }
+
+  removeTask(task: number){
+    EventBusService.emit('removeTask', task);
   }
 
 
