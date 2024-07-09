@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Tasks } from '../../shared/models/tasks';
 import { CommonModule } from '@angular/common';
-import EventBusService from '../../shared/services/EventService'
+import { EventBusService } from '../../shared/services/EventService'
 
 @Component({
   selector: 'app-display-tasks',
@@ -13,6 +13,8 @@ import EventBusService from '../../shared/services/EventService'
   styleUrl: './display-tasks.component.css'
 })
 export class DisplayTasksComponent {
+  constructor(private eventBusService: EventBusService ){}
+
   @Input() visibleTasks!: Tasks[];
   @Input() tasks!: Tasks[];
 
@@ -22,7 +24,7 @@ export class DisplayTasksComponent {
   }
 
   removeTask(task: number){
-    EventBusService.emit('removeTask', task);
+    this.eventBusService.emit('removeTask', task);
   }
 
 

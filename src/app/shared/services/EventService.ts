@@ -1,6 +1,11 @@
+import { Injectable } from '@angular/core'
 import { Subject } from 'rxjs';
 
-class EventBusService{
+@Injectable({
+  providedIn: 'root'
+}
+)
+export class EventBusService{
   private subject =  new Subject();
 
   emit(eventName: string, payload: any){
@@ -8,12 +13,10 @@ class EventBusService{
   }
 
   listen(eventName: string, callback: (event: any) => void){
-    this.subject.subscribe((nextObj: any) => {
+    this.subject.asObservable().subscribe((nextObj: any) => {
       if (eventName === nextObj.eventName){
         callback(nextObj.payload);
       }
     })
   }
 }
-
-export default new EventBusService();
