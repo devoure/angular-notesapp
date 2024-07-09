@@ -1,27 +1,37 @@
-# Tasker
+# :memo: Angular Tasker
+> :bulb: Coding Task
+## 💬 Description
+>  This frontend solution of a tasker app build with angular.
+## :soccer: Task Goals
+1. Add tasks.
+Allow a user to add new tasks.
+	 	
+1. Filter tasks.
+Allow user to filter tasks by Pending, Completed and All.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+1. Display tasks.
+Allow user to view their tasks in the UI.
 
-## Development server
+1. Check tasks.
+Check tasks if completed or still pending by clicking a select option.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Delete tasks.
+allow user to remove tasks from the list.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 🔧 Code Setup
+   1. Clone the repo
+        ```bash
+            git clone https://github.com/devoure/angular-notesapp.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+        ```
+## 💻🏃‍♂️ Running Code Snippet
+   1. Run code
+        ```bash
+            cd angular-notesapp
+            ng serve
 
-## Running unit tests
+        ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
